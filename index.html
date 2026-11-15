@@ -23,24 +23,35 @@
             overflow-x: hidden;
         }
 
-        /* Top Navigation Bar */
+        /* Upgraded Centered Logo Header */
         .top-nav {
             width: 100%;
             max-width: 1080px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 24px 20px;
+            padding: 30px 20px 10px 20px;
             z-index: 10;
         }
-        .brand-logo {
-            font-size: 18px;
-            font-weight: 900;
-            color: #1a4d2e;
-            text-decoration: none;
-            display: flex;
+        .brand-logo-container {
+            background: #ffffff;
+            padding: 12px 28px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(26, 77, 46, 0.08);
+            border: 2px solid rgba(26, 77, 46, 0.12);
+            display: inline-flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            transition: transform 0.2s ease;
+            text-decoration: none;
+        }
+        .brand-logo-container:hover {
+            transform: translateY(-2px);
+        }
+        .brand-logo-container img {
+            height: 65px; /* Makes the logo bigger & prominent */
+            width: auto;
+            display: block;
         }
 
         .section-wrapper {
@@ -238,8 +249,8 @@
 <body>
 
     <nav class="top-nav">
-        <a href="#" class="brand-logo">
-            <img src="logo.jpg" alt="Elevated Digital & Media Logo" style="height: 45px; width: auto; display: block;">
+        <a href="#" class="brand-logo-container">
+            <img src="logo.jpg" alt="Elevated Digital & Media Logo">
         </a>
     </nav>
 
