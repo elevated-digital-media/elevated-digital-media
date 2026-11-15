@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevated Digital & Media | Professional Development & Aerial Services</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(180deg, #cde9f2 0%, #eaf4f9 45%, #ffffff 100%);
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 0 110px 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Top Navigation Bar */
+        .top-nav {
+            width: 100%;
+            max-width: 1080px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 20px;
+            z-index: 10;
+        }
+        .brand-logo {
+            font-size: 18px;
+            font-weight: 900;
+            color: #1a4d2e;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 30px 24px;
+            position: relative;
+            z-index: 5;
+        }
+        .container {
+            width: 100%;
+            max-width: 1080px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .section-badge {
+            display: inline-block;
+            background: rgba(26, 77, 46, 0.1);
+            color: #1a4d2e;
+            border: 1px solid rgba(26, 77, 46, 0.25);
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: 38px;
+            font-weight: 900;
+            color: #1a4d2e;
+            text-align: center;
+            margin-bottom: 12px;
+            line-height: 1.15;
+        }
+        .section-subtitle {
+            font-size: 17px;
+            color: #334155;
+            text-align: center;
+            max-width: 680px;
+            line-height: 1.55;
+            margin-bottom: 40px;
+        }
+
+        /* Pricing Grid Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        .service-card {
+            background: #ffffff;
+            border: 2px solid rgba(26, 77, 46, 0.15);
+            border-radius: 22px;
+            padding: 30px 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #1a4d2e;
+        }
+        .service-icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+        }
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 900;
+            color: #1a4d2e;
+            margin-bottom: 8px;
+        }
+        .service-price {
+            font-size: 22px;
+            font-weight: 900;
+            color: #dc2626;
+            margin-bottom: 14px;
+        }
+        .service-card p {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .service-features {
+            list-style: none;
+            margin-bottom: 24px;
+            font-size: 13.5px;
+            color: #334155;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .service-features li::before {
+            content: "✓ ";
+            color: #16a34a;
+            font-weight: 900;
+        }
+
+        /* Inquiry Form Section */
+        .form-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
+            border: 3px solid #dc2626;
+            border-radius: 26px;
+            padding: 45px 36px;
+            width: 100%;
+            max-width: 760px;
+            box-shadow: 0 20px 45px rgba(220, 38, 38, 0.12);
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 800;
+            font-size: 14px;
+            color: #1a4d2e;
+            margin-bottom: 6px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 2px solid rgba(26, 77, 46, 0.2);
+            font-size: 15px;
+            font-family: inherit;
+            background: #ffffff;
+            color: #1e293b;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .form-control:focus {
+            border-color: #dc2626;
+        }
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .submit-btn {
+            background: #dc2626;
+            color: #ffffff;
+            border: none;
+            width: 100%;
+            padding: 16px;
+            border-radius: 14px;
+            font-weight: 900;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.35);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .submit-btn:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 35px 20px 25px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            border-top: 1px solid rgba(26, 77, 46, 0.15);
+            width: 100%;
+            max-width: 1080px;
+        }
+        .footer-copy { color: #475569; font-size: 13.5px; font-weight: 600; }
+        .footer-links { color: #475569; font-size: 14px; font-weight: 700; }
+        .footer-links a { color: #1e293b; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; color: #1a4d2e; }
+        .footer-email { color: #dc2626; font-size: 14px; font-weight: 800; text-decoration: none; }
+
+        @media (max-width: 860px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title { font-size: 28px; }
+            .form-card { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="#" class="brand-logo">🌲 Elevated Digital & Media</a>
+    </nav>
+
+    <section class="section-wrapper" style="padding-top: 10px;">
+        <div class="container">
+            <span class="section-badge">Professional Services & Rates</span>
+            <h1 class="section-title">Build Your Next Project With Us</h1>
+            <p class="section-subtitle">
+                Specialized full-stack mobile & web development, live GPS event tracking, and professional aerial drone media production.
+            </p>
+
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <!-- 1. Mobile App -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">📱</div>
+                        <h3>Custom Mobile App</h3>
+                        <div class="service-price">$1,500 – $3,000+</div>
+                        <p>Full-stack cross-platform iOS & Android development for community platforms, games, or business apps.</p>
+                        <ul class="service-features">
+                            <li>React Native & Expo</li>
+                            <li>Supabase Backend & Auth</li>
+                            <li>App Store & Google Play Launch</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. Interactive Web Platform -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">🌐</div>
+                        <h3>Interactive Web App</h3>
+                        <div class="service-price">$500 – $2,000</div>
+                        <p>High-performance web applications featuring dynamic maps, real-time data feeds, and responsive UI.</p>
+                        <ul class="service-features">
+                            <li>Responsive React Architecture</li>
+                            <li>Vercel High-Speed Deployment</li>
+                            <li>Custom Mapping & Dashboards</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. Santa Run Live Tracking -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">🚒</div>
+                        <h3>Santa Run GPS Tracking</h3>
+                        <div class="service-price">$300 – $500</div>
+                        <p>Modernize your volunteer fire company or parade with real-time GPS tracking for holiday routes.</p>
+                        <ul class="service-features">
+                            <li>Live Route Map Integration</li>
+                            <li>Custom Mobile Viewing Links</li>
+                            <li>QR Code Flyer Integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4. Promotional Website -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">✨</div>
+                        <h3>Promo Landing Page</h3>
+                        <div class="service-price">$300 – $800</div>
+                        <p>Clean, modern, high-converting landing pages to showcase apps, local events, or brand showcases.</p>
+                        <ul class="service-features">
+                            <li>Mobile-Optimized Layouts</li>
+                            <li>Integrated Contact Forms</li>
+                            <li>Fast Custom Domain Setup</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 5. Real Estate Aerial Media -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">🚁</div>
+                        <h3>Aerial Drone Media</h3>
+                        <div class="service-price">$150 – $500</div>
+                        <p>Breathtaking 4K drone videography and high-res HDR photography for real estate or marketing highlights.</p>
+                        <ul class="service-features">
+                            <li>4K Ultra-HD Videography</li>
+                            <li>Stitched Panoramic Photos</li>
+                            <li>Edited Social Highlight Clips</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 6. Inspections & Mapping -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">📐</div>
+                        <h3>Roof Inspections & Mapping</h3>
+                        <div class="service-price">$120 – $500 / hr</div>
+                        <p>Detailed high-definition visual inspection imagery, orthomosaic site surveys, and volumetric analysis.</p>
+                        <ul class="service-features">
+                            <li>FAA-Compliant (LAANC)</li>
+                            <li>2D / 3D Orthomosaic Capture</li>
+                            <li>Precise Site Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inquiry Form Card -->
+            <div class="form-card">
+                <h2 style="font-size: 26px; font-weight: 900; color: #dc2626; text-align: center; margin-bottom: 8px;">Let's Talk About Your Project</h2>
+                <p style="font-size: 15px; color: #334155; text-align: center; margin-bottom: 28px;">Fill out the details below and send an inquiry directly to our inbox.</p>
+                
+                <form id="inquiryForm" action="https://formsubmit.co/contact.elevateddigitalmedia@gmail.com" method="POST">
+                    <!-- Hidden configuration fields for FormSubmit -->
+                    <input type="hidden" name="_subject" value="💼 New Elevated Digital & Media Inquiry!">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="form-group">
+                        <label for="clientName">Your Name / Organization</label>
+                        <input type="text" id="clientName" name="Client_Name" class="form-control" placeholder="e.g., Chief Ken Fisher / Station 43" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientEmail">Your Email Address</label>
+                        <input type="email" id="clientEmail" name="Email" class="form-control" placeholder="e.g., yourname@domain.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceSelect">Service of Interest</label>
+                        <select id="serviceSelect" name="Service_Interest" class="form-control">
+                            <option value="Custom Mobile App">Custom Mobile App ($1,500 - $3,000+)</option>
+                            <option value="Interactive Web Platform">Interactive Web Platform ($500 - $2,000)</option>
+                            <option value="Santa Run GPS Tracking">Santa Run GPS Tracking ($300 - $500)</option>
+                            <option value="Promotional Landing Page">Promotional Landing Page ($300 - $800)</option>
+                            <option value="Aerial Drone Media">Aerial Drone Media ($150 - $500)</option>
+                            <option value="Inspections & Mapping">Roof Inspections & Mapping ($120 - $500/hr)</option>
+                            <option value="Other / General Inquiry">Other Custom Project</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectDetails">Project Details & Timeline</label>
+                        <textarea id="projectDetails" name="Project_Details" class="form-control" placeholder="Describe what you're looking to build or track..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Project Inquiry ✉️</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-copy">© 2026 Elevated Digital & Media. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="https://xmasmaps.net" target="_blank">XmasMaps</a> · <a href="mailto:contact.elevateddigitalmedia@gmail.com">Support</a>
+        </div>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.elevateddigitalmedia@gmail.com" target="_blank" class="footer-email">contact.elevateddigitalmedia@gmail.com</a>
+    </footer>
+
+</body>
+</html>
