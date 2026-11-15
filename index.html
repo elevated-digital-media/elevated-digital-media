@@ -363,15 +363,14 @@
                 <p style="font-size: 15px; color: #334155; text-align: center; margin-bottom: 28px;">Fill out the details below and send an inquiry directly to our inbox.</p>
                 
                 <form id="inquiryForm" action="https://formsubmit.co/contact.elevateddigitalmedia@gmail.com" method="POST">
-                    <!-- Hidden configuration fields for FormSubmit -->
-                    <input type="hidden" name="_subject" value="💼 New Elevated Digital & Media Inquiry!">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-					
-					<!-- Place the redirect field right here -->
-					<input type="hidden" name="_next" value="https://elevated-digital-media.vercel.app/thankyou.html">
-					
-					<!-- ADD THESE TWO LINES FOR THE AUTO-REPLY -->
+					<!-- Hidden configuration fields for FormSubmit -->
+					<input type="hidden" name="_subject" value="💼 New Elevated Digital & Media Inquiry!">
+					<input type="hidden" name="_template" value="table">
+					<input type="hidden" name="_captcha" value="false">
+    
+				<!-- FIX: Redirect to the live domain root instead of a direct file path -->
+					<input type="hidden" name="_next" value="https://elevated-digital-media.vercel.app/">
+    
 					<input type="hidden" name="_autoresponse" value="Thank you for reaching out to Elevated Digital & Media! We have received your project inquiry and will review the details shortly. We'll get back to you within 24 hours.">
 					<input type="hidden" name="_template" value="table">
 
