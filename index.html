@@ -23,7 +23,7 @@
             overflow-x: hidden;
         }
 
-        /* Upgraded Centered Logo Header */
+        /* Upgraded Large & Sharp Logo Header */
         .top-nav {
             width: 100%;
             max-width: 1080px;
@@ -35,10 +35,10 @@
         }
         .brand-logo-container {
             background: #ffffff;
-            padding: 20px 45px;
-            border-radius: 28px;
-            box-shadow: 0 12px 35px rgba(26, 77, 46, 0.12);
-            border: 2px solid rgba(26, 77, 46, 0.15);
+            padding: 24px 55px;
+            border-radius: 32px;
+            box-shadow: 0 14px 40px rgba(26, 77, 46, 0.14);
+            border: 2px solid rgba(26, 77, 46, 0.18);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -49,10 +49,11 @@
             transform: translateY(-2px);
         }
         .brand-logo-container img {
-            height: 120px; /* Makes your PNG logo large and prominent */
+            height: 180px; /* Greatly increased size so subtext is clear */
             width: auto;
             display: block;
             object-fit: contain;
+            image-rendering: -webkit-optimize-contrast; /* Keeps text razor-sharp */
         }
 
         .section-wrapper {
@@ -251,7 +252,6 @@
 
     <nav class="top-nav">
         <a href="#" class="brand-logo-container">
-            <!-- Update the filename here to match your exact logo file name if different -->
             <img src="logo.png" alt="Elevated Digital & Media Logo">
         </a>
     </nav>
@@ -373,7 +373,7 @@
                         <input type="text" id="clientName" name="Client_Name" class="form-control" placeholder="e.g., Chief Ken Fisher / Station 43" required>
                     </div>
                     <div class="form-group">
-                        <label for="clientImage">Your Email Address</label>
+                        <label for="clientEmail">Your Email Address</label>
                         <input type="email" id="clientEmail" name="Email" class="form-control" placeholder="e.g., yourname@domain.com" required>
                     </div>
                     <div class="form-group">
